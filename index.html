@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- --TAILWIN CSS-- -->
+    <link rel="stylesheet" href="src/output.css" />
+    <!-- --TW-BUILD -->
+     <link rel="stylesheet" href="dist/build.css">
+    <!-- ---LINK FLOWBITE -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Default: sembunyikan tombol */
+      .custom-register-btn {
+        display: none;
+      }
+
+      /* Saat layar ≥ 300px, tampilkan tombol */
+      @media (min-width: 412px) {
+        .custom-register-btn {
+          display: inline-block;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-primary">
+    <!-- ----TOP NAVBAR-- -->
+    <div class="w-full mx-auto bg-[#003E29] p-2 text-white">
+      <div
+        class="max-w-screen-xl flex flex-col md:flex-row items-center justify-around md:justify-between gap-4 mx-auto"
+      >
+        <!-- Nomor Telepon -->
+        <div class="md:flex items-center gap-2 hidden">
+          <img src="img/phone.svg" alt="phone" class="w-5 h-5" />
+          <p>0834 213 8123</p>
+        </div>
+
+        <!-- Promo -->
+        <p class="text-center order-first md:order-none">
+          Dapatkan Promo Beli 1 Gratis 1
+        </p>
+
+        <!-- Lokasi -->
+        <div class="hidden md:flex items-center gap-2">
+          <img src="img/location.svg" alt="loc" class="w-5 h-5" />
+          <p>Semarang, Indonesia</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---NAVBAR--- -->
+    <nav
+      class="bg-white dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="img/logo.svg" class="h-8 w-fit md:w-full" alt=" Logo" />
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            type="button"
+            class="custom-register-btn text-[#003E29] border border-[#003E29] focus:ring-4 focus:outline-none focus:ring-green-400 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-700 dark:hover:bg-[#003E29] dark:focus:ring-green-900 cursor-pointer mr-1"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="custom-register-btn text-white bg-[#003E29] hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-400 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-700 dark:hover:bg-[#003E29] dark:focus:ring-green-900 cursor-pointer"
+          >
+            Register
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="font-bold block py-2 px-3 bg-[#003E29] rounded-sm md:bg-transparent md:text-[#003E29] md:p-0 md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#003E29] md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent font-bold"
+              >
+                Kategori
+                <svg
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >T-Shirt</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Sepatu</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Jeans</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#003E29] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-bold"
+                >Promo</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ----END NAVBAR -->
+
+    <!-- ----HERO SECTION -->
+    <section class="bg-[#E4BBA1] h-1/2 w-full mt-0 md:mt-17">
+      <div
+        class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-center"
+      >
+        <!-- ---kiri-- -->
+        <div
+          class="flex flex-col pl-17 md:pl-32 pt-32 pb-32 order-2 md:order-1"
+        >
+          <p class="font-light text-xl">
+            Diskon <span class="font-semibold">30%</span> Hari ini
+          </p>
+          <p
+            class="font-black text-3xl lg:text-6xl text-[#003E29] mb-5 leading-tight"
+          >
+            Promo 2023 <br />
+            Jacket Collection
+          </p>
+          <div>
+            <button
+              type="button"
+              class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+        <!-- ---kanan -->
+        <div class="order-1 md:order-2 -mb-20 md:mb-0">
+          <img
+            src="img/images/hero.png"
+            alt="hero"
+            class="h-3/6 w-fit order-1 md:order-2 pt-10 md:pt-0"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- ----HERO END -->
+
+    <!-- ----KATEGORI -->
+    <div class="container mx-auto mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div
+        class="relative mx-5 flex justify-between rounded-md bg-[#E4BBA1] p-5 md:mx-0"
+      >
+        <!--kiri-->
+        <div>
+          <p class="text-xl font-light text-white">Diskon 10 %</p>
+          <p class="text-3xl font-black text-white">T-Shirt</p>
+          <button
+            type="button"
+            class="mt-3 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-[#E4BBA1] hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <!--kanan--->
+        <div class="absolute right-0 bottom-0">
+          <img src="https://bombi.my.id/lp/fashion/category1.png" alt="Jeans" />
+        </div>
+      </div>
+      <!--kategori 2---->
+      <div
+        class="relative mx-5 flex justify-between rounded-md bg-[#D9D9D9] p-5 md:mx-0"
+      >
+        <!--kiri-->
+        <div>
+          <p class="text-base font-normal text-[#000000]">Diskon 10 %</p>
+          <p class="text-3xl font-black text-black">Sepatu</p>
+          <button
+            type="button"
+            class="mt-3 rounded-lg border border-gray-300 bg-black px-4 py-2 text-sm font-medium text-white hover:bg-black focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <!--kanan--->
+        <div class="absolute right-0 bottom-0 -translate-y-2">
+          <img src="https://bombi.my.id/lp/fashion/category2.png" alt="Jeans" />
+        </div>
+      </div>
+      <!--kategori 3--->
+      <div
+        class="relative mx-5 flex justify-between rounded-md bg-[#003E29] p-5 md:mx-0"
+      >
+        <!--kiri-->
+        <div>
+          <p class="text-base font-normal text-white">Diskon 10 %</p>
+          <p class="text-3xl font-black text-white">Jeans</p>
+          <button
+            type="button"
+            class="mt-3 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-[#003E29] hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          >
+            Beli Sekarang
+          </button>
+        </div>
+        <!--kanan--->
+        <div class="absolute right-0 bottom-0">
+          <img src="https://bombi.my.id/lp/fashion/category3.png" alt="Jeans" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ----END KATEGORI -->
+
+    <!-- ---TOP PRODUCTS -->
+    <div class="container mx-auto mt-8">
+      <h1 class="text-2xl font-bold text-[#003E29] translate-x-4">
+        Top Products
+      </h1>
+      <div
+        class="mt-4 grid grid-cols-1 gap-3 px-3 md:grid-cols-2 lg:grid-cols-4"
+      >
+        <div class="rounded-2xl border border-[#787878] p-4">
+          <!-- Gambar Product -->
+          <div class="flex justify-center rounded-2xl bg-[#EDEDED] p-4">
+            <img
+              src="https://bombi.my.id/lp/fashion/product1.png"
+              alt="Jeans Wanita"
+              class="h-48"
+            />
+          </div>
+
+          <!-- Title -->
+          <div class="mt-2">
+            <p class="text-base font-light text-[#787878]">Jeans</p>
+            <p class="mb-3 text-2xl text-[#000000]">JEANS WANITA 39</p>
+            <p class="mb-5 text-xl font-black">Rp. 450.000</p>
+          </div>
+          <div class="flex">
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img
+              src="https://bombi.my.id/lp/fashion/star-hide.svg"
+              alt="star"
+            />
+          </div>
+        </div>
+
+        <!-- Tiga kotak produk kosong lainnya -->
+        <div class="rounded-2xl border border-[#787878] p-4">
+          <!-- Gambar Product -->
+          <div class="flex justify-center rounded-2xl bg-[#EDEDED] p-4">
+            <img
+              src="https://bombi.my.id/lp/fashion/product3.png"
+              alt="Jeans Wanita"
+              class="h-48"
+            />
+          </div>
+
+          <!-- Title -->
+          <div class="mt-2">
+            <p class="text-base font-light text-[#787878]">T-Shirt</p>
+            <p class="mb-3 text-2xl text-black">T-SHIRT BLACK</p>
+            <p class="mb-5 text-xl font-black">Rp. 120.000</p>
+          </div>
+          <div class="flex">
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img
+              src="https://bombi.my.id/lp/fashion/star-half.svg"
+              alt="star"
+            />
+          </div>
+        </div>
+        <div class="rounded-2xl border border-[#787878] p-4">
+          <!-- Gambar Product -->
+          <div class="flex justify-center rounded-2xl bg-[#EDEDED] p-4">
+            <img
+              src="https://bombi.my.id/lp/fashion/product2.png"
+              alt="Jeans Wanita"
+              class="h-48"
+            />
+          </div>
+
+          <!-- Title -->
+          <div class="mt-2">
+            <p class="text-base font-light text-[#787878]">Sepatu</p>
+            <p class="mb-3 text-2xl text-black">SEPATU HITAM NIKE</p>
+            <p class="mb-5 text-xl font-black">Rp. 300.000</p>
+          </div>
+          <div class="flex">
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img
+              src="https://bombi.my.id/lp/fashion/star-hide.svg"
+              alt="star"
+            />
+          </div>
+        </div>
+        <div class="rounded-2xl border border-[#787878] p-4">
+          <!-- Gambar Product -->
+          <div class="flex justify-center rounded-2xl bg-[#EDEDED] p-4">
+            <img
+              src="https://bombi.my.id/lp/fashion/bag.png"
+              alt="Jeans Wanita"
+              class="h-48 object-fill"
+            />
+          </div>
+
+          <!-- Title -->
+          <div class="mt-2">
+            <p class="text-base font-light text-[#787878]">Tas</p>
+            <p class="mb-3 text-2xl text-black">TAS WANITA 47</p>
+            <p class="mb-5 text-xl font-black">Rp. 250.000</p>
+          </div>
+          <div class="flex">
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img src="https://bombi.my.id/lp/fashion/star.svg" alt="star" />
+            <img
+              src="https://bombi.my.id/lp/fashion/star-hide.svg"
+              alt="star"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------SUBSCRIBE------ -->
+    <div class="mt-8 w-full bg-[#D9D9D9] p-12 text-center">
+      <p class="text-4xl font-black">Let's Keep In Touch</p>
+      <p class="mb-6 font-light">
+        Segera isi untuk dapatkan diskon 15 % untuk Pemesanan Pertama
+      </p>
+      <div class="flex items-center justify-center">
+        <div class="flex items-center rounded-md">
+          <input
+            type="text"
+            name="company-website"
+            class="block w-full flex-1 rounded-l-md rounded-r-none border-gray-300 bg-white px-6 py-1.5 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:py-2"
+            placeholder="Enter Your Email..."
+          />
+        </div>
+        <span
+          class="inline-flex items-center rounded-r-md border border-l-0 border-gray-300 bg-black px-3 py-1.5 text-white"
+        >
+          Subscribe
+        </span>
+      </div>
+    </div>
+    <!-- --------SUBSCRIBE------ -->
+
+    <!-- --------------FAQ---------- -->
+    <section class="container mx-auto p-12">
+      <p class="font-black text-2xl text-center mb-5">
+        Frequently Asked Questions (FAQ)
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-5"
+        id="accordion-container"
+        data-accordion="collapse"
+       >
+        <!-- Accordion Item 1 -->
+        <div>
+          <h2 id="heading-1">
+            <button
+              type="button"
+              class=" bg-[#F5F5F5] flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+              data-accordion-target="#body-1"
+              aria-expanded="false"
+              aria-controls="body-1"
+            >
+              <span
+                >Bagaimana Caranya Memesan ?</span
+              >
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div id="body-1" class="hidden" aria-labelledby="heading-1">
+            <div
+              class="p-5 border border-t-0 border-gray-200 dark:border-gray-700"
+            >
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                The main difference is that the core components from
+                Flowbite are open source under the MIT license, whereas
+                Tailwind UI is a paid product. Another difference is that
+                Flowbite relies on smaller and standalone components,
+                whereas Tailwind UI offers sections of pages.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div>
+          <h2 id="heading-2">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+              data-accordion-target="#body-2"
+              aria-expanded="false"
+              aria-controls="body-2"
+            >
+              <span>Berapa Ongkirnya ?</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div id="body-2" class="hidden" aria-labelledby="heading-2">
+            <div
+              class="p-5 border border-t-0 border-gray-200 dark:border-gray-700"
+            >
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                Flowbite is first conceptualized and designed using the
+                Figma software so everything you see in the library has a
+                design equivalent in our Figma file.
+              </p>
+              <p class="text-gray-500 dark:text-gray-400">
+                Check out the
+                <a
+                  href="https://flowbite.com/figma/"
+                  class="text-blue-600 dark:text-blue-500 hover:underline"
+                  >Figma design system</a
+                >
+                based on the utility classes from Tailwind CSS and
+                components from Flowbite.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- ========================== -->
+         <!-- Accordion Item 3 -->
+        <div>
+          <h2 id="heading-3">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+              data-accordion-target="#body-3"
+              aria-expanded="false"
+              aria-controls="body-3"
+            >
+              <span
+                >Bagaimana Caranya Pengembalian Barang?</span
+              >
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div id="body-3" class="hidden" aria-labelledby="heading-3">
+            <div
+              class="p-5 border border-t-0 border-gray-200 dark:border-gray-700"
+            >
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                The main difference is that the core components from
+                Flowbite are open source under the MIT license, whereas
+                Tailwind UI is a paid product. Another difference is that
+                Flowbite relies on smaller and standalone components,
+                whereas Tailwind UI offers sections of pages.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 4 -->
+        <div>
+          <h2 id="heading-4">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+              data-accordion-target="#body-4"
+              aria-expanded="false"
+              aria-controls="body-4"
+            >
+              <span>Bagamana Cara Menggunakan Diskon ?</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div id="body-4" class="hidden" aria-labelledby="heading-4">
+            <div
+              class="p-5 border border-t-0 border-gray-200 dark:border-gray-700"
+            >
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                Flowbite is first conceptualized and designed using the
+                Figma software so everything you see in the library has a
+                design equivalent in our Figma file.
+              </p>
+              <p class="text-gray-500 dark:text-gray-400">
+                Check out the
+                <a
+                  href="https://flowbite.com/figma/"
+                  class="text-blue-600 dark:text-blue-500 hover:underline"
+                  >Figma design system</a
+                >
+                based on the utility classes from Tailwind CSS and
+                components from Flowbite.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- -----------FAQ Section -->
+
+        <!-- -----FOOTER---- -->
+        <footer class="h-64 w-full bg-[#003E29] pt-11 mt-5">
+          <div class="mx-auto flex justify-center">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.775 36.75C11.6667 36.75 10.7188 36.3487 9.93125 35.546C9.14375 34.7445 8.75 33.7896 8.75 32.6812V16.45L5.55625 8.75H3.5C3.00417 8.75 2.58883 8.582 2.254 8.246C1.918 7.91117 1.75 7.49583 1.75 7C1.75 6.50417 1.918 6.08825 2.254 5.75225C2.58883 5.41742 3.00417 5.25 3.5 5.25H6.7375C7.0875 5.25 7.40833 5.35208 7.7 5.55625C7.99167 5.76042 8.21042 6.02292 8.35625 6.34375L10.8063 12.25H36.6625C37.3333 12.25 37.8438 12.5271 38.1938 13.0812C38.5438 13.6354 38.5583 14.2042 38.2375 14.7875L33.25 24.5437C34.7375 24.7771 35.9847 25.4625 36.9915 26.6C37.9972 27.7375 38.5 29.0792 38.5 30.625C38.5 32.3167 37.9097 33.7604 36.729 34.9563C35.5472 36.1521 34.1104 36.75 32.4187 36.75C30.6979 36.75 29.2472 36.1521 28.0665 34.9563C26.8847 33.7604 26.2937 32.3167 26.2937 30.625C26.2937 30.0417 26.3667 29.5021 26.5125 29.0063C26.6583 28.5104 26.8625 28.0292 27.125 27.5625L21.3938 27.0375L16.1438 34.9125C15.7646 35.4958 15.2758 35.9479 14.6772 36.2688C14.0799 36.5896 13.4458 36.75 12.775 36.75ZM12.8187 33.2063C12.8771 33.2063 13.0083 33.1333 13.2125 32.9875L17.4563 26.6875C16.0271 26.5417 14.9042 26.1987 14.0875 25.6585C13.2708 25.1195 12.6583 24.5583 12.25 23.975V32.725C12.25 32.8708 12.3083 32.9875 12.425 33.075C12.5417 33.1625 12.6729 33.2063 12.8187 33.2063ZM32.375 33.25C33.1333 33.25 33.7604 32.9945 34.2563 32.4835C34.7521 31.9737 35 31.3542 35 30.625C35 29.8667 34.7521 29.2396 34.2563 28.7437C33.7604 28.2479 33.1333 28 32.375 28C31.6458 28 31.0263 28.2479 30.5165 28.7437C30.0055 29.2396 29.75 29.8667 29.75 30.625C29.75 31.3542 30.0055 31.9737 30.5165 32.4835C31.0263 32.9945 31.6458 33.25 32.375 33.25Z" fill="white" />
+            </svg>
+            <p class="text-4xl font-light text-white">Toko<span class="text-4xl font-black text-white">Fashion</span></p>
+          </div>
+          <p class="pt-4 text-center text-xl font-light text-white/50">
+            Jalan Sumpah Pemuda No. 18 <br />
+            Krapyak Semarang (Gedung A Lantai 2)
+          </p>
+          <div class="flex items-center justify-center pt-5 pb-5 gap-3">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 3.33325H27C32.3334 3.33325 36.6667 7.66659 36.6667 12.9999V26.9999C36.6667 29.5637 35.6483 32.0224 33.8354 33.8353C32.0226 35.6481 29.5638 36.6666 27 36.6666H13C7.66671 36.6666 3.33337 32.3333 3.33337 26.9999V12.9999C3.33337 10.4362 4.35182 7.9774 6.16468 6.16455C7.97753 4.3517 10.4363 3.33325 13 3.33325ZM12.6667 6.66659C11.0754 6.66659 9.54928 7.29873 8.42407 8.42394C7.29885 9.54916 6.66671 11.0753 6.66671 12.6666V27.3333C6.66671 30.6499 9.35004 33.3333 12.6667 33.3333H27.3334C28.9247 33.3333 30.4508 32.7011 31.576 31.5759C32.7012 30.4507 33.3334 28.9245 33.3334 27.3333V12.6666C33.3334 9.34992 30.65 6.66659 27.3334 6.66659H12.6667ZM28.75 9.16658C29.3026 9.16658 29.8325 9.38608 30.2232 9.77678C30.6139 10.1675 30.8334 10.6974 30.8334 11.2499C30.8334 11.8025 30.6139 12.3324 30.2232 12.7231C29.8325 13.1138 29.3026 13.3333 28.75 13.3333C28.1975 13.3333 27.6676 13.1138 27.2769 12.7231C26.8862 12.3324 26.6667 11.8025 26.6667 11.2499C26.6667 10.6974 26.8862 10.1675 27.2769 9.77678C27.6676 9.38608 28.1975 9.16658 28.75 9.16658ZM20 11.6666C22.2102 11.6666 24.3298 12.5446 25.8926 14.1074C27.4554 15.6702 28.3334 17.7898 28.3334 19.9999C28.3334 22.2101 27.4554 24.3297 25.8926 25.8925C24.3298 27.4553 22.2102 28.3333 20 28.3333C17.7899 28.3333 15.6703 27.4553 14.1075 25.8925C12.5447 24.3297 11.6667 22.2101 11.6667 19.9999C11.6667 17.7898 12.5447 15.6702 14.1075 14.1074C15.6703 12.5446 17.7899 11.6666 20 11.6666ZM20 14.9999C18.674 14.9999 17.4022 15.5267 16.4645 16.4644C15.5268 17.4021 15 18.6738 15 19.9999C15 21.326 15.5268 22.5978 16.4645 23.5355C17.4022 24.4731 18.674 24.9999 20 24.9999C21.3261 24.9999 22.5979 24.4731 23.5356 23.5355C24.4733 22.5978 25 21.326 25 19.9999C25 18.6738 24.4733 17.4021 23.5356 16.4644C22.5979 15.5267 21.3261 14.9999 20 14.9999Z" fill="white" />
+            </svg>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M36.6667 19.9999C36.6667 10.7999 29.2 3.33325 20 3.33325C10.8 3.33325 3.33337 10.7999 3.33337 19.9999C3.33337 28.0666 9.06671 34.7833 16.6667 36.3332V24.9999H13.3334V19.9999H16.6667V15.8333C16.6667 12.6166 19.2834 9.99992 22.5 9.99992H26.6667V14.9999H23.3334C22.4167 14.9999 21.6667 15.7499 21.6667 16.6666V19.9999H26.6667V24.9999H21.6667V36.5833C30.0834 35.7499 36.6667 28.6499 36.6667 19.9999Z" fill="white" />
+            </svg>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M27.6667 9.7C26.5274 8.39937 25.8995 6.72905 25.9 5H20.75V25.6667C20.7103 26.785 20.2381 27.8444 19.433 28.6216C18.6278 29.3988 17.5524 29.8332 16.4333 29.8333C14.0667 29.8333 12.1 27.9 12.1 25.5C12.1 22.6333 14.8667 20.4833 17.7167 21.3667V16.1C11.9667 15.3333 6.93335 19.8 6.93335 25.5C6.93335 31.05 11.5334 35 16.4167 35C21.65 35 25.9 30.75 25.9 25.5V15.0167C27.9883 16.5164 30.4956 17.3211 33.0667 17.3167V12.1667C33.0667 12.1667 29.9333 12.3167 27.6667 9.7Z" fill="white" />
+            </svg>
+          </div>
+          <div class="h-12 w-full bg-[#023423]">
+            <p class="pt-3 text-center text-base font-light text-white/50">© Wahidev Academy 2025. Hak Cipta Dilindungi</p>
+          </div>
+        </footer>
+        
+        <!-- -----FOOTER---- -->
+       
+        
+
+        <!-- --LINK JS FLOWBITE -->
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
